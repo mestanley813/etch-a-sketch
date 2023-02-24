@@ -1,9 +1,25 @@
 let color = "black";
+const gridRange = document.getElementById("gridRange")
+const gridValue = document.getElementById("gridValue")
+
+gridRange.onmousemove = (e) => updateSizeValue(e.target.value)
+gridRange.onchange = (e) => changeSize(e.target.value)
 
 document.addEventListener("DOMContentLoaded", function(){
     createBoard(16);
-    
 })
+
+
+function changeSize(value) {
+    updateSizeValue(value)
+    createBoard(value)
+    erase()
+}
+
+function updateSizeValue(value) {
+    gridValue.innerHTML = `Grid size: ${value} x ${value}`
+}
+
 
 function createBoard(size){
     let gridContainer = document.querySelector(".grid-container");
@@ -19,17 +35,9 @@ function createBoard(size){
     }
 }
 
-function getSize(){
-    let size = prompt("Please enter grid size:", 16)
-    while (size < 16 || size > 100 ){
-        size = prompt("Size must be between 16 and 100 inclusive")
-    }
-    createBoard(size);
-}
-
-function reset(){
+function erase(){
     let divs = document.querySelectorAll(".grid-container > div");
-    divs.forEach((div) => div.style.backgroundColor = "white");
+    divs.forEach((div) => div.style.backgroundColor = '#95949d');
 }
 
 function colorDiv(){
