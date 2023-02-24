@@ -12,14 +12,16 @@
 </head>
 <body>
     <h1>Etching on my Sketch</h1>
-    <button onclick="getSize()">Set your grid size!</button>
     <div class="grid-container">
     </div>
     <div class="button-container">
-        <button onclick="setColor('rainbow')">Rainbow</button>
-        <button onclick="reset()">Reset</button>
         <button onclick="setColor('black')">Black</button>
+        <button onclick="erase()">Erase</button>
+        <button onclick="setColor('rainbow')">Rainbow</button>
+        
     </div>
+    <input id="gridRange" type="range" min="16" max="64" value="16">
+    <div id="gridValue">Grid Value: 16 x 16</div>
     <footer>
         <script src="script.js"></script>
     </footer>
