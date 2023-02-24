@@ -2,6 +2,8 @@
  --red: #DF1420;
  --gold: #FFD700;
  --white: #EAEAF1;
+ --gray: #95949d;
+ --background: #14DFD3;
 }
 
 *{
@@ -13,6 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--background);
 }
 
 h1 {
@@ -23,23 +26,36 @@ h1 {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-family: 'Caveat', cursive;
+    font-size: 50px;
+    width: 822px;
+    margin: 0;
 }
 
 .grid-container {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     display: grid;
     border: solid var(--red);
     border-width: 0 4rem;
+    background-color: var(--gray);
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
-    width: 500px;
+    width: 700px;
     align-items: center;
     background-color: var(--red);
     padding: 20px 64px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    box-shadow: 0 0 10px black;
 }
